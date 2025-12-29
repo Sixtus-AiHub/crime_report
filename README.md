@@ -5,12 +5,12 @@ This project involves a comprehensive exploratory data analysis (EDA), time seri
 The objective is to uncover long-term trends, seasonal patterns, persistence, and volatility in crime incidents using statistical and visualization techniques.
 
 ## 🎯 Objectives
-- Analyze long-term crime trends over time  
-- Identify seasonal and cyclical patterns  
-- Examine temporal persistence using autocorrelation analysis  
-- Assess volatility and structural changes  
-- Prepare the data for time series forecasting models  
-
+-   To perform an in-depth Exploratory Data Analysis (EDA) on the `US_Crime_DataSet.csv` to understand crime patterns and distributions.
+-   To identify temporal trends and seasonalities in crime incidents using time series analysis techniques.
+-   To visualize the spatial distribution of crime across different US states.
+-   To uncover relationships between various factors such as crime type, demographics (victim/perpetrator sex, age, race, ethnicity), weapon used, and crime solvability.
+-   To assess data quality, particularly regarding the prevalence of missing or 'Unknown' values, and discuss their implications.
+-   To provide actionable insights and recommendations based on the analytical findings.
 ---
 
 ## 🗂 Dataset Description
@@ -111,6 +111,13 @@ This document summarizes the key findings derived from the exploratory data anal
 -   **Seasonal Patterns:** A monthly incident heatmap revealed distinct seasonal patterns, with certain months consistently showing higher or lower crime counts across different years.
 -   **Trends in Specific Crime Types:** 'Murder or Manslaughter' incidents align with the overall decreasing trend. 'Manslaughter by Negligence' remains low and relatively stable.
 -   **Solved vs. Unsolved Trends:** Both solved and unsolved crime counts generally follow the overall decreasing trend, with solved crimes consistently outnumbering unsolved cases annually.
+
+
+## Insights and Recommendations
+-   **Data Quality**: The high percentage of 'Unknown' values in key demographic fields suggests a need for improved data collection practices or a robust strategy for handling missing data (e.g., advanced imputation or careful exclusion) in future analyses or predictive modeling efforts.
+-   **Predictive Modeling Potential**: While feasible, predictive modeling would require significant preprocessing to address the 'Unknown' values. Columns like `Crime Solved`, `Crime Type`, `Weapon`, and geographical/temporal features offer good potential as targets or predictors.
+-   **Targeted Investigations**: The analysis of `Relationship` influencing `Crime Solved` status can help agencies understand which cases might require more resources or have specific challenges during investigation. For example, cases involving `Unknown` relationships tend to have lower solved rates.
+-   **Further Research**: Investigating the context behind high 'Unknown' rates and the specific dynamics within intimate partner and familial violence (especially for female perpetrators and male victims) could yield deeper sociological insights.
 
 
 ## 🛠 Tools & Libraries

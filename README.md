@@ -1,12 +1,8 @@
 # 📊 Crime Time Series Analysis (1980–2014)
 
 ## 📌 Project Overview
-This project presents an exploratory and time series analysis of crime incident data spanning **1980 to 2014**.  
+This project involves a comprehensive exploratory data analysis (EDA), time series analysis, and spatial mapping of the `US_Crime_DataSet.csv` to uncover patterns, trends, and key insights related to crime incidents across the United States from **1980 to 2014**.
 The objective is to uncover long-term trends, seasonal patterns, persistence, and volatility in crime incidents using statistical and visualization techniques.
-
-The analysis applies concepts from **rolling statistics, time series decomposition, autocorrelation (ACF/PACF), and trend analysis**, providing insights useful for policy analysis, forecasting, and data-driven decision-making.
-
----
 
 ## 🎯 Objectives
 - Analyze long-term crime trends over time  
@@ -18,7 +14,7 @@ The analysis applies concepts from **rolling statistics, time series decompositi
 ---
 
 ## 🗂 Dataset Description
-The dataset contains recorded crime incidents with the following relevant features:
+The dataset (`US_Crime_DataSet.csv`) contains detailed information about crime incidents, including:
 
 | Column | Description |
 |------|------------|
@@ -45,36 +41,31 @@ The dataset contains recorded crime incidents with the following relevant featur
 
 
 
-## 🧠 Methods & Techniques Used
+## 🧠 Methodology
+The analysis was structured into the following phases:
 
-### 1️⃣ Exploratory Data Analysis (EDA)
-- Incident aggregation by year and month  
-- Decade-wise comparisons  
-- Distribution analysis of victims and perpetrators  
+1.  **Data Loading and Initial Inspection**: Loaded the dataset and performed initial checks using `crimes.info()` and `crimes.describe()`.
+2.  **Unnoticed Observations**: Explored `Crime Type` vs. `Weapon` usage and `Relationship` vs. `Crime Solved` status for deeper insights.
 
-### 2️⃣ Trend Analysis
-- Rolling mean smoothing  
-- Visualization of long-term crime behavior  
+3.  **Univariate Analysis**: Explored the distribution of individual variables such as `Crime Type`, `Crime Solved`, `Victim Sex`, `Perpetrator Sex`, `Victim Race`, `Perpetrator Race`, `Relationship`, `Weapon`, and age distributions.
 
-### 3️⃣ Seasonality Analysis
-- Monthly aggregation across years  
-- Detection of recurring seasonal patterns  
+4.  **Bivariate Analysis**: Investigated relationships between pairs of variables, including:
+    -   Top agencies by crime count.
+    -   `Crime Type` vs. `Crime Solved` status.
+    -   Sex-to-sex interaction patterns between victims and perpetrators.
+    -   Race and ethnicity interaction patterns.
+    -   `Victim Age` vs. `Perpetrator Age` relationships.
+    -   `Crime Solved` status by `Agency Type`.
+    -   Specific analysis on `Female Perpetrator` and `Male Victim` relationships.
+  
+5.  **Spatial Mapping**: Visualized crime distribution across US states using choropleth maps for total incidents, victim counts, perpetrator counts, and unsolved crimes.
 
-### 4️⃣ Volatility Analysis
-- Rolling standard deviation  
-- Identification of unstable periods  
+6.  **Time Series Analysis**: Examined temporal trends of crime incidents, including:
+    -   Yearly and monthly incident counts.
+    -   Autocorrelation Function (ACF) and Partial Autocorrelation Function (PACF) to identify temporal dependencies.
+    -   Trends in specific crime types and solved/unsolved crimes over time.
 
-### 5️⃣ Time Series Decomposition
-- Additive decomposition into:
-  - Trend
-  - Seasonal
-  - Residual components  
-
-### 6️⃣ Autocorrelation Analysis
-- Autocorrelation Function (ACF)  
-- Partial Autocorrelation Function (PACF)  
-- Evaluation of persistence and model suitability  
-
+7.  **Data Quality Assessment**: Evaluated the prevalence of 'Unknown' or '0' values in critical demographic and relationship columns and discussed their implications.
 ---
 
 ## 📈 Key Findings from Crime Data Analysis
@@ -96,9 +87,17 @@ This document summarizes the key findings derived from the exploratory data anal
 -   **Top Agencies by Crime Count:** The `Chicago Municipal Police` recorded the highest number of incidents, followed by `Houston Municipal Police` and `Detroit Municipal Police`.
 -   **Crime Type vs. Solved Status:** 'Manslaughter by Negligence' has an exceptionally high solved rate (95.7%). 'Murder or Manslaughter' cases are solved approximately 69.8% of the time.
 -   **Sex Interaction Pattern:** Male perpetrators are involved in a high proportion of crimes against both male (75.1%) and female (24.9%) victims. Female perpetrators primarily victimize males (77.5%).
+-   **Relationship (Female Perpetrator & Male Victim):** When the perpetrator is female and the victim is male, the most frequent relationships are:
+    *   **Husband:** 22.81%
+    *   **Boyfriend:** 18.69%
+    *   **Acquaintance:** 16.52%
+    *   **Son:** 9.91%
+    *   **Unknown:** 9.45%
+    
 -   **Race and Ethnicity Interaction:** The analysis reveals a strong tendency for crimes to occur within the same racial groups, particularly for Black and White individuals. Similarly, 'Not Hispanic' perpetrators primarily victimize 'Not Hispanic' individuals.
 -   **Victim Age vs. Perpetrator Age:** A hexbin plot indicates a strong correlation between victim and perpetrator ages, suggesting that individuals often commit crimes against those in similar age brackets.
 -   **Crime Solved by Agency Type:** 'State Police' (82.3%) and 'Tribal Police' (92.6%) demonstrate the highest crime-solved rates. 'County Police' and 'Municipal Police' show solved rates of approximately 67-68%.
+-  **Significant Data Gaps in Demographic and Relationship Information**: The dataset contains a very high percentage of 'Unknown' values in critical demographic and relationship columns. Specifically, `Perpetrator Ethnicity` has 69.92% 'Unknown' values, `Victim Ethnicity` has 57.69% 'Unknown' values, `Relationship` has 42.76% 'Unknown' values, and `Perpetrator Race` has 30.71% 'Unknown' values.
 
 ## 3. Spatial Mapping
 
@@ -107,7 +106,7 @@ This document summarizes the key findings derived from the exploratory data anal
 
 ## 4. Time Series Analysis
 
--   **Overall Crime Trends (1980-2014):** The total number of annual crime incidents generally shows a decreasing trend over the analyzed period, as confirmed by the 3-year rolling mean.
+-   **Overall Crime Trends (1980-2014):** The total number of annual crime incidents generally shows a decreasing trend over the analyzed period, as confirmed by the 3-year rolling mean. There is a significant increment in crime rate from 1990-1995 
 -   **Autocorrelation:** Significant autocorrelation was observed in the overall incident data, as well as for specific categories like 'Murder or Manslaughter', 'Solved/Unsolved Crimes', 'Victim Count', and 'Perpetrator Count'. This suggests that past crime rates influence future rates, indicating potential for time series forecasting.
 -   **Seasonal Patterns:** A monthly incident heatmap revealed distinct seasonal patterns, with certain months consistently showing higher or lower crime counts across different years.
 -   **Trends in Specific Crime Types:** 'Murder or Manslaughter' incidents align with the overall decreasing trend. 'Manslaughter by Negligence' remains low and relatively stable.
@@ -118,6 +117,7 @@ This document summarizes the key findings derived from the exploratory data anal
 - **Python 3**
 - `pandas` – data manipulation  
 - `numpy` – numerical computation  
-- `matplotlib` & `seaborn` – visualization  
+- `matplotlib` & `seaborn` – visualization
+-  `seaborn` (Enhanced Statistical Visualizations)
 - `statsmodels` – time series analysis  
 - `plotly` – interactive visualizations  

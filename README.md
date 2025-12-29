@@ -30,6 +30,19 @@ The dataset contains recorded crime incidents with the following relevant featur
 | `Crime Solved` | Whether the crime was solved |
 | `Victim Count` | Number of victims |
 | `Perpetrator Count` | Number of perpetrators |
+| `Victim Sex` | Sex of the victim |
+| `Victim Age` | Age of the victim |
+| `Victim Race` | Race of the victim |
+| `Victim Ethnicity` | Ethnic background of the victim |
+| `Victim Count` | Number of victims involved in the incident |
+| `Perpetrator Sex` | Sex of the perpetrator |
+| `Perpetrator Age` | Age of the perpetrator |
+| `Perpetrator Race` | Race of the perpetrator |
+| `Perpetrator Ethnicity` | Ethnic background of the perpetrator |
+| `Perpetrator Count` | Number of perpetrators involved |
+| `Relationship` | Relationship between victim and perpetrator |
+| `Weapon` | Weapon used during the incident |
+
 
 
 ## 🧠 Methods & Techniques Used

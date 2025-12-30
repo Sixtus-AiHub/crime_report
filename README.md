@@ -101,7 +101,11 @@ This document summarizes the key findings derived from the exploratory data anal
 
 ## 3. Spatial Mapping
 
--   **Geographical Distribution of Crimes:** California, Texas, and Florida consistently appear as the states with the highest overall crime incidents, victim counts, and perpetrator counts, highlighting them as major crime hotspots.
+-   **Geographical Distribution of Crimes:** California (ca), Texas (Tx), New York (NY) and Florida (FL) consistently appear as the states with the highest overall crime incidents, victim counts, and perpetrator counts, highlighting them as major crime hotspots.
+
+<p align="center">
+  <img src="newplot (2).png" width="750">
+</p>
 
 <p align="center">
   <img src="newplot (3).png" width="750">

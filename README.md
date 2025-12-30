@@ -102,6 +102,15 @@ This document summarizes the key findings derived from the exploratory data anal
 ## 3. Spatial Mapping
 
 -   **Geographical Distribution of Crimes:** California, Texas, and Florida consistently appear as the states with the highest overall crime incidents, victim counts, and perpetrator counts, highlighting them as major crime hotspots.
+
+<p align="center">
+  <img src="newplot (3).png" width="750">
+</p>
+
+<p align="center">
+  <img src="newplot (4).png" width="750">
+</p>
+
 -   **Unsolved Crimes by State:** California leads in the number of unsolved crimes, followed by New York and Texas.
 
 ## 4. Time Series Analysis

@@ -119,7 +119,20 @@ This document summarizes the key findings derived from the exploratory data anal
 
 ## 4. Time Series Analysis
 
--   **Overall Crime Trends (1980-2014):** The total number of annual crime incidents generally shows a decreasing trend over the analyzed period, as confirmed by the 3-year rolling mean. There is a significant increment in crime rate from 1990-1995 
+-   **Overall Crime Trends (1980-2014):** The total number of annual crime incidents generally shows a decreasing trend over the analyzed period, as confirmed by the 3-year rolling mean. There is a significant increment in crime rate from 1990-1995
+
+<p align="center">
+  <img src="newplot.png" width="750">
+</p>
+
+<p align="center">
+  <img src="newplot (5).png" width="750">
+</p>
+
+<p align="center">
+  <img src="newplot (6).png" width="750">
+</p>
+
 -   **Autocorrelation:** Significant autocorrelation was observed in the overall incident data, as well as for specific categories like 'Murder or Manslaughter', 'Solved/Unsolved Crimes', 'Victim Count', and 'Perpetrator Count'. This suggests that past crime rates influence future rates, indicating potential for time series forecasting.
 -   **Seasonal Patterns:** A monthly incident heatmap revealed distinct seasonal patterns, with certain months consistently showing higher or lower crime counts across different years.
 -   **Trends in Specific Crime Types:** 'Murder or Manslaughter' incidents align with the overall decreasing trend. 'Manslaughter by Negligence' remains low and relatively stable.
